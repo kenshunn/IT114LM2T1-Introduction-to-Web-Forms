@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Exercise5.master.cs" Inherits="Module2Topic1.Exercise5" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(128 128 128);
+            &::webkit-scrollbar {
+                                    display:none;
+                                }
+        }
+
+        #exercices-nav{
+            display:flex;
+            justify-content:center;
+            width: 1000px;
+            background-color: rgb(255,255,255);
+        }
+
+        #exercises-nav ul {
+            list-style-type: none;
+            justify-content: space-around;
+            margin-bottom: 0px;
+        }
+
+        #exercises-nav li {
+            display: inline-block;
+            padding: 20px;
+            border-bottom: solid 5px black;
+            transition: 0.3s ease-in-out;
+        }
+
+        a {
+            color: rgb(240, 240, 240);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        iframe {
+            justify-content: center;
+            outline: none;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 1500px;
+            height: 400px;
+        }
+
+        #main-frame {
+            display:flex;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        #title {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .questions {
+            display: flex;
+            justify-content: flex-start;
+            margin-right: 50px;
+            margin-left: 50px;
+            margin-bottom: 25px;
+            margin-top: 30px;
+        }
+
+        .answer {
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 120px;
+            margin-bottom: 18px;
+            margin-top: 15px;
+            margin-right: 80px;
+            word-wrap: break-word;
+        }
+
+        #footer {
+            display: flex;
+            padding: 30px;
+            justify-content: center;
+            margin-top: 30px;
+            background-color:black;
+        }
+
+        #footer p {
+            padding: 20px;
+            color: #808080;
+        }
+    </style>
+</head>
+<body>
+
+     <header>
+        <nav id="exercises-nav">
+            <ul>
+                <li><a href="javascript:void(0)" onclick="SetFrameURL('Exercise1.aspx')">Exercise 1</a></li>
+                <li><a href="javascript:void(0)" onclick="SetFrameURL('Exercise2.aspx')">Exercise 2</a></li>
+                <li><a href="javascript:void(0)" onclick="SetFrameURL('Exercise3.aspx')">Exercise 3</a></li>
+                <li><a href="javascript:void(0)" onclick="SetFrameURL('Exercise4.aspx')">Exercise 4</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="MasterContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <footer id="footer" runat="server">
+        <p>Copyright &#169; 2024 Ken Aaron De Martin</p>
+    </footer>
+
+    <script>
+        function SetFrameURL(url) {
+            document.getElementById("main-display").src = url;
+        }
+    </script>
+
+</body>
+</html>

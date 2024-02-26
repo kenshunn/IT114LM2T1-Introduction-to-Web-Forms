@@ -13,5 +13,51 @@ namespace Module1Exercise1
         {
             // TODO 3.3 Set the text value of the finalGrade label to "Submit your grade percentage to see your final grade!". Watch out for post backs
         }
+
+        protected void Calculate(object sender, EventArgs e)
+        {
+            int num = int.Parse(percentageGrade.Text);
+            if (num >= 96)
+            {
+                finalGrade.Text = "1.00";
+                Response.Write("<script>alert('Congratulation!')</script>");
+            }
+            else if (num < 96 && num >= 91.5)
+            {
+                finalGrade.Text = "1.25";
+            }
+            else if (num < 91.5 && num >= 87)
+            {
+                finalGrade.Text = "1.5";
+            }
+            else if (num < 87 && num >= 82.5)
+            {
+                finalGrade.Text = "1.75";
+            }
+            else if (num < 82.5 && num >= 78)
+            {
+                finalGrade.Text = "2.00";
+            }
+            else if (num < 78 && num >= 73.5)
+            {
+                finalGrade.Text = "2.25";
+            }
+            else if (num < 73.5 && num >= 69)
+            {
+                finalGrade.Text = "2.50";
+            }
+            else if (num < 69 && num >= 64.5)
+            {
+                finalGrade.Text = "2.75";
+            }
+            else if (num < 64.5 && num >= 60)
+            {
+                finalGrade.Text = "3.00";
+            }
+            else
+            {
+                finalGrade.Text = "5.00";
+            }
+        }
     }
 }
